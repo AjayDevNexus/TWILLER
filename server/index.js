@@ -17,6 +17,7 @@ const client = new MongoClient(uri);
 async function run() {
   try {
     await client.connect();
+    console.log('Successfully connected to MongoDB');
     const postcollection = client.db("database").collection("posts");
     const usercollection = client.db("database").collection("users");
     app.post("/register", async (req, res) => {
