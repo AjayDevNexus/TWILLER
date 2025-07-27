@@ -6,10 +6,7 @@ const uri = process.env.Mongo_DB;
 const port = 5000;
 
 const app = express();
-app.use(cors({
-  origin: ['http://localhost:3000'],
-  methods: ['GET', 'POST', 'PATCH'],
-}));
+app.use(cors());
 app.use(express.json());
 
 const client = new MongoClient(uri);
